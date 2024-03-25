@@ -3,13 +3,13 @@
 <mapper namespace="com.board.user.mapper.UserMapper">  
 		 
 	<resultMap id="getUserMap" type="java.util.HashMap">
-	 <result property="userid"    column="userid"  />
-	 <result property="passwd"    column="passwd"  />
+	 <result property="userid"    column="userid"   />
+	 <result property="passwd"    column="passwd"   />
 	 <result property="username"  column="username" />
-	 <result property="email"     column="email" />
-	 <result property="upt"       column="upt" />
-	 <result property="upoint"    column="upoint" />
-	 <result property="indate"    column="indate" />	
+	 <result property="email"     column="email"    />
+	 <result property="upt"       column="upt"      />
+	 <result property="upoint"    column="upoint"   />
+	 <result property="indate"    column="indate"   />	
 	</resultMap>
 	
 	
@@ -68,6 +68,24 @@
 	    )	
 		
 	</insert>
+	
+	<update  id="updateUser">
+	
+      UPDATE   TUSER
+       SET     USERNAME = #{ username },
+               PASSWD   = #{ passwd   },
+               EMAIL    = #{ email    }, 
+               UPOINT   = #{ upoint   } 
+       WHERE   USERID   = #{ userid   }  
+
+	</update>
+	
+	<delete  id="deleteUser">
+	
+	   DELETE  FROM  TUSER
+	    WHERE  USERID = #{ userid  } 
+	
+	</delete>
 	
 </mapper>
 
