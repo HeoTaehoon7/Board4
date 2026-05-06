@@ -23,7 +23,22 @@
    
    .red     { color:red;  }
    
-   
+   .menu    {
+   	   td  {
+   	       padding:0px;
+	   	   a   { 
+	   	       display:block;   	        
+	   	       color:white;
+	   	       padding: 10px;
+	   	       background-color: black ;
+		   	   &:hover {
+		   	       text-decoration  : none;
+		   	   	   background-color : #04AA6D;
+		   	   	   color            : white; 
+		   	   }  
+	   	   }
+   	   },
+   }
    
    
    
