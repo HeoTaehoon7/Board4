@@ -38,6 +38,9 @@
 </style>
 <body> 
   <main>
+    <!-- 메뉴 출력 -->
+    <%@include file="/WEB-INF/include/menus.jsp" %>
+    
     <h2>게시글 내용 보기</h2>
      <table>
       <tr>

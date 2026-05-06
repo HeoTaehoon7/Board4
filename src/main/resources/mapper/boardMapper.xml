@@ -40,6 +40,15 @@
 		    	
 	</select>
 	
+	<!-- idx 의 조회수를 증가 -->
+	<update  id="incHit">
+	
+	UPDATE  BOARD
+	 SET    HIT = HIT + 1
+	 WHERE  IDX = #{ idx } 
+	
+	</update>
+	
 	
 </mapper>
 
