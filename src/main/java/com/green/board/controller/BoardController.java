@@ -44,6 +44,22 @@ public class BoardController {
 		return  mv;
 	}
 	
+	// /Board/View?idx=1
+	@RequestMapping("/View")
+	public  ModelAndView  view( BoardDto  boardDto  ) {
+				
+		// idx 로 조회한 게시글
+		BoardDto  board  =  boardMapper.getBoard( boardDto  );
+		System.out.println("board:" + board );
+		// board:BoardDto [idx=1, menu_id=MENU01, title=JAVA Hello, writer=java, regdate=2026-05-04 15:16:57, hit=0]
+
+		
+		ModelAndView  mv   =  new ModelAndView();
+		mv.setViewName("board/view" );
+		mv.addObject("board", board);
+		return  mv;
+	}
+	
 }
 
 
