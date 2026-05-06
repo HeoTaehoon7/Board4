@@ -44,7 +44,7 @@
       </tr>
       <tr>
         <td><span class="red">*</span>옛날 비밀 번호</td>
-        <td><input type="password" id="passwdold"  /></td>        
+        <td><input type="password" name="oldpwd" id="passwdold"  /></td>        
       </tr>
       <tr>
         <td><span class="red">*</span>새 비밀 번호</td>

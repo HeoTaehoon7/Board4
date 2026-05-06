@@ -25,8 +25,9 @@ public class BoardController {
 	@RequestMapping("/List")
 	public  ModelAndView   list( MenuDTO  menuDto  ) {
 		
-		List<BoardDto>  boardList  =  boardMapper.getBoardList( menuDto );
-		log.warn("boardList:" + boardList);
+		// List<BoardDto>  boardList  =  boardMapper.getBoardList( menuDto );
+		List<BoardDto>  boardList  =  boardMapper.getBoardList2( "MENU01" );
+		log.error("boardList:" + boardList);
 		
 		ModelAndView  mv  =  new  ModelAndView();
 		mv.setViewName("board/list");
