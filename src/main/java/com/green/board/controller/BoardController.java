@@ -29,11 +29,11 @@ public class BoardController {
 	@RequestMapping("/List")
 	public  ModelAndView   list( MenuDTO  menuDto  ) {
 		
-		// 메뉴전체목록 조회
+		// 메뉴전체목록 조회 - menus.jsp
 		List<MenuDTO>  menuList  =  menuMapper.getMenuList();
 		log.info("menuList:" + menuList);
 				
-		// 게시물 목록 조회
+		// 게시물 목록 조회 - list.jsp (menu_id=MENU01)
 		List<BoardDto>  boardList  =  boardMapper.getBoardList( menuDto );		
 		log.error("boardList:" + boardList);
 		
