@@ -38,9 +38,9 @@ public class BoardController {
 		log.error("boardList:" + boardList);
 		
 		ModelAndView  mv  =  new  ModelAndView();
-		mv.setViewName("board/list");
+		mv.setViewName("board/list");   // /WEB-INF/views/board/list.jsp
 		mv.addObject("menuList",  menuList);
-		mv.addObject("boardList", boardList);
+		mv.addObject("bList",     boardList);
 		return  mv;
 	}
 	

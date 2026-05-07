@@ -5,8 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <link rel="shortcut icon" href="/img/favicon2.png" type="image/x-icon">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <link href="/css/common.css" rel="stylesheet" />
 
 <style>
@@ -20,10 +23,9 @@
 	     border:1px solid white;
 	 } 
   }
-  tr:last-child > td {
-      background: white;
-      border : 1px solid black; 
-  }
+ 
+  
+  /*     ------------------------------ */
     
   input[type="text"], input[type=number], input[type=password]  {
      width : 100%;
@@ -35,14 +37,56 @@
      width : 65%;
   }
   
+  #table1 {
+     margin-bottom : 150px;
+     td {
+        &:nth-of-type(1) {
+           width : 150px;  
+           background: black;
+	       color : white;         
+        }
+        &:nth-of-type(2) {
+           width : 150px;
+           background: white;
+	       color : black;           
+        }
+        &:nth-of-type(3) {
+           width : 150px;
+           background: black;
+	       color : white; 
+	       border-bottom : 1px solid white;          
+        }
+        &:nth-of-type(4) {
+           width : 150px;
+           background: white;
+	       color : black;                  
+        }
+     }
+  }
+  
+  #table1  tr:last-of-type > td {
+      background: white;
+      border : 1px solid black; 
+  }  
+  #table1  tr:nth-of-type(3) td:nth-of-type(2) { 
+      text-align: left;
+  }
+  #table1  tr:nth-of-type(4) {
+      height : 400px;
+  }
+  
+  
 </style>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
 <body> 
   <main>
     <!-- 메뉴 출력 -->
     <%@include file="/WEB-INF/include/menus.jsp" %>
     
     <h2>게시글 내용 보기</h2>
-     <table>
+     <table id="table1">
       <tr>
         <td>글 번호</td>
         <td>${board.idx}</td>
@@ -66,11 +110,11 @@
      
       <tr>
         <td colspan="4">
-          <a href="/Board/WriteForm">새글쓰기</a>
-          <a href="/Board/UpdateForm?idx=${board.idx}">수정</a>
-          <a href="/Board/Delete?idx=${board.idx}">삭제</a>
-          <a href="/Board/List">목록</a>
-          <a href="/">Home</a>
+          <a href="/Board/WriteForm" class="btn btn-primary">새글쓰기</a>
+          <a href="/Board/UpdateForm?idx=${board.idx}" class="btn btn-warning">수정</a>
+          <a href="/Board/Delete?idx=${board.idx}" class="btn btn-danger">삭제</a>
+          <a href="/Board/List?menu_id=${board.menu_id}" class="btn btn-info">목록</a>
+          <a href="/" class="btn btn-success">Home</a>
         </td>
       </tr>
      </table>    
