@@ -39,12 +39,14 @@ public class BoardController {
 		
 		// 넘어온 menu_id
 		String          menu_id    =  menuDto.getMenu_id(); 
+		MenuDTO         menu       =  menuMapper.getMenu( menuDto ); 
 		
 		ModelAndView    mv         =  new  ModelAndView();
 		mv.setViewName("board/list");   // /WEB-INF/views/board/list.jsp
 		mv.addObject("menuList",  menuList);
 		mv.addObject("bList",     boardList);
 		mv.addObject("menu_id",   menu_id);  // 현재 메뉴정보
+		mv.addObject("menu",      menu   );  // 현재 메뉴전체정보()
 		
 		return  mv;
 	}
@@ -65,6 +67,9 @@ public class BoardController {
 		System.out.println("board:" + board );
 		// board:BoardDto [idx=1, menu_id=MENU01, title=JAVA Hello, writer=java, regdate=2026-05-04 15:16:57, hit=0]
 		
+		// content 안에 있는 엔터 \n 를 <br> 변경 -> content
+		board.setContent(  board.getContent().replace("\n", "<br>")  );		
+		
 		ModelAndView  mv   =  new ModelAndView();
 		mv.setViewName("board/view" );
 		mv.addObject("menuList", menuList );
@@ -82,11 +87,13 @@ public class BoardController {
 		
 		System.out.println("/Board/WriteForm boardDto:" + boardDto );
 		
-		String        menu_id = boardDto.getMenu_id();
+		String        menu_id    =  boardDto.getMenu_id();
+		String        menu_name  =  menuMapper.getMenuName(  menu_id  );
 		
-		ModelAndView  mv      =  new ModelAndView();
+		ModelAndView  mv         =  new ModelAndView();
 		mv.setViewName("board/write");
-		mv.addObject("menu_id",  menu_id  );
+		mv.addObject("menu_id",   menu_id  );
+		mv.addObject("menu_name", menu_name );
 		mv.addObject("menuList", menuList );
 		return  mv;
 		

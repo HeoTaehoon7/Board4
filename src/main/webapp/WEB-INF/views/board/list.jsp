@@ -44,6 +44,8 @@
    main {
       margin-bottom : 150px; 
    }
+   
+   .menu td > .${ menu_id } { background-color : #04AA6D; }  
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -54,7 +56,7 @@
 	<main>
 	  <%@include file="/WEB-INF/include/menus.jsp" %> 
 	
-	  <h2>게시물 목록</h2>
+	  <h2>${ menu.menu_name } 게시물 목록</h2>
 	  <table id="list" class="table  table-hover">
 	    <tr>
 	      <td>번호</td>
