@@ -58,6 +58,7 @@
 	
 	  <h2>${ menu.menu_name } 게시물 목록</h2>
 	  <table id="list" class="table  table-hover">
+ 
 	    <tr>
 	      <td>번호</td>
 	      <td>제목</td>
@@ -65,6 +66,7 @@
 	      <td>날짜</td>
 	      <td>조회수</td>	
 	    </tr>
+
 	    <tr>
 	      <td  colspan="5">
 	       [<a href="/Board/WriteForm?menu_id=${ menu_id }">새 글 등록</a>]&nbsp;&nbsp;&nbsp; 

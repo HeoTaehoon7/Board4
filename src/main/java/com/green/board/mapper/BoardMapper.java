@@ -19,6 +19,10 @@ public interface BoardMapper {
 	void incHit(BoardDto boardDto);
 
 	void insertBoard(BoardDto boardDto);
+
+	void deleteBoard(BoardDto boardDto);
+
+	void updateBoard(BoardDto boardDto);
 	
 	
 }
