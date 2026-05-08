@@ -45,7 +45,7 @@
       margin-bottom : 150px; 
    }
    
-   .menu td > .${ menu_id } { background-color : #04AA6D; }  
+   /* .menu td > .${ menu_id } { background-color : #04AA6D; } */  
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -76,7 +76,7 @@
 	    <tr>
 	      <td> ${  board.idx      }  </td>    <!-- menu.getMenu_id() -->
 	      <td class="title"> 
-	        <a href ="/Board/View?idx=${board.idx}">
+	        <a href ="/Board/View?idx=${board.idx}&menu_id=${menu_id}">
 	        ${ board.title    }
 	        </a>  
 	      </td>

@@ -51,11 +51,11 @@ public class BoardController {
 		return  mv;
 	}
 	
-	// /Board/View?idx=1
+	// /Board/View?idx=8&menu_id=MENU01
 	@RequestMapping("/View")
 	public  ModelAndView  view( BoardDto  boardDto  ) {
 		
-		// 메뉴 목록 조회
+		// 전체 메뉴 목록 조회
 		List<MenuDTO>  menuList = menuMapper.getMenuList();
 		
 		// idx 글의  조회수를 1 증가
@@ -74,6 +74,7 @@ public class BoardController {
 		mv.setViewName("board/view" );
 		mv.addObject("menuList", menuList );
 		mv.addObject("board", board);
+		mv.addObject("menu_id", board.getMenu_id() );
 		
 		return  mv;
 	}
