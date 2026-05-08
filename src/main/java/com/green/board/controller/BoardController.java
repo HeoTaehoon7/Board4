@@ -161,7 +161,8 @@ public class BoardController {
 	@RequestMapping("/Update")
 	public  ModelAndView  update( BoardDto  boardDto  ) {
 		
-		
+		// 넘오온 자료로 board를 수정
+		boardMapper.updateBoard( boardDto  );
 		
 		// 수정 후 목록으로 이동
 		String         menu_id   =  boardDto.getMenu_id();
